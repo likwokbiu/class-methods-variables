@@ -1,0 +1,9 @@
+[]
+[#<Zombie:0x007f9a511b7c70 @speed=4, @strength=2>, #<Zombie:0x007f9a511b7bf8 @speed=0, @strength=2>, #<Zombie:0x007f9a511b7b08 @speed=3, @strength=5>, #<Zombie:0x007f9a511b79f0 @speed=5, @strength=6>, #<Zombie:0x007f9a511b79a0 @speed=2, @strength=5>, #<Zombie:0x007f9a511b7950 @speed=1, @strength=4>, #<Zombie:0x007f9a511b78d8 @speed=4, @strength=3>, #<Zombie:0x007f9a511b78b0 @speed=5, @strength=0>, #<Zombie:0x007f9a511b7888 @speed=2, @strength=5>, #<Zombie:0x007f9a511b7838 @speed=5, @strength=0>]
+You are now a zombie!
+You escaped!
+You escaped!
+[#<Zombie:0x007f9a511b7c70 @speed=4, @strength=2>, #<Zombie:0x007f9a511b7bf8 @speed=0, @strength=2>, #<Zombie:0x007f9a511b7b08 @speed=3, @strength=5>, #<Zombie:0x007f9a511b79f0 @speed=5, @strength=6>, #<Zombie:0x007f9a511b79a0 @speed=2, @strength=5>, #<Zombie:0x007f9a511b7950 @speed=1, @strength=4>, #<Zombie:0x007f9a511b78d8 @speed=4, @strength=3>, #<Zombie:0x007f9a511b78b0 @speed=5, @strength=0>, #<Zombie:0x007f9a511b7888 @speed=2, @strength=5>, #<Zombie:0x007f9a511b7838 @speed=5, @strength=0>, #<Zombie:0x007f9a511b5d08 @speed=5, @strength=7>, #<Zombie:0x007f9a511b5ce0 @speed=3, @strength=1>, #<Zombie:0x007f9a511b5cb8 @speed=3, @strength=2>, #<Zombie:0x007f9a511b5c90 @speed=1, @strength=3>]
+You escaped!
+You escaped!
+You died!

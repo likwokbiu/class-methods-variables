@@ -1,0 +1,9 @@
+[]
+[#<Vampire:0x007fe4ea82c7c0 @name="John", @age=35, @in_coffin=true, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c770 @name="Peter", @age=56, @in_coffin=true, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c720 @name="Tom", @age=26, @in_coffin=true, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c6d0 @name="Bob", @age=77, @in_coffin=true, @drank_blood_today=false>]
+[#<Vampire:0x007fe4ea82c7c0 @name="John", @age=35, @in_coffin=false, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c770 @name="Peter", @age=56, @in_coffin=false, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c720 @name="Tom", @age=26, @in_coffin=false, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c6d0 @name="Bob", @age=77, @in_coffin=false, @drank_blood_today=false>]
+true
+true
+true
+true
+[#<Vampire:0x007fe4ea82c7c0 @name="John", @age=35, @in_coffin=true, @drank_blood_today=false>, #<Vampire:0x007fe4ea82c770 @name="Peter", @age=56, @in_coffin=true, @drank_blood_today=true>, #<Vampire:0x007fe4ea82c720 @name="Tom", @age=26, @in_coffin=false, @drank_blood_today=true>, #<Vampire:0x007fe4ea82c6d0 @name="Bob", @age=77, @in_coffin=false, @drank_blood_today=false>]
+[#<Vampire:0x007fe4ea82c770 @name="Peter", @age=56, @in_coffin=true, @drank_blood_today=true>]
