@@ -2,6 +2,8 @@ class Book
   @@on_shelf = []
   @@on_loan = []
 
+  LOAN_TERM = 21 * (24 * 60 * 60)
+
   def initialize(title, author, isbn)
     @title = title
     @author = author
@@ -16,11 +18,37 @@ class Book
     return @due_date
   end
 
+  def on_hold?
+    return @on_hold
+  end
+
+  def due_date=(due_date)
+    return @due_date = due_date
+  end
+
   def borrow
     if !self.lent_out?
+      self.due_date = Book.current_due_date
       @@on_loan << self
-      Book.current_due_date
       @@on_shelf.delete(self)
+      return true
+    else
+      return false
+    end
+  end
+
+  def renew
+    if self.lent_out? && !self.on_hold?
+      self.due_date = self.due_date + LOAN_TERM
+      return true
+    else
+      return false
+    end
+  end
+
+  def hold
+    if self.lent_out?
+      @on_hold = true
       return true
     else
       return false
@@ -29,8 +57,8 @@ class Book
 
   def return_to_library
     if self.lent_out?
+      self.update_due_date(nil)
       @@on_shelf << self
-      @@on_shelf.last.update_due_date(nil)
       @@on_loan.delete(self)
       return true
     else
@@ -58,9 +86,7 @@ class Book
   end
 
   def self.current_due_date
-    new_due_date = Time.now + (21 * 24 * 60 * 60)
-    @@on_loan.last.update_due_date(new_due_date)
-    return new_due_date
+    Time.now + LOAN_TERM
   end
 
   def self.overdue
@@ -103,6 +129,14 @@ puts sister_outsider.borrow # true
 puts sister_outsider.lent_out? # true
 puts sister_outsider.borrow # false
 puts sister_outsider.due_date # 2017-02-25 20:52:20 -0500 (this value will be different for you)
+
+puts sister_outsider.renew # Stretch goals: 1
+puts sister_outsider.due_date # renewed due date
+
+puts sister_outsider.hold # Stretch goals: 2
+puts sister_outsider.renew #
+puts sister_outsider.due_date # renewed due date
+
 puts Book.available.inspect # [#<Book:0x00562314676118 @title="Ain't I a Woman?", @author="Bell Hooks", @isbn="9780896081307">, #<Book:0x00562314675fd8 @title="If They Come in the Morning", @author="Angela Y. Davis", @isbn="0893880221">]
 puts Book.borrowed.inspect # [#<Book:0x00562314676208 @title="Sister Outsider", @author="Audre Lorde", @isbn="9781515905431", @due_date=2017-02-25 20:55:17 -0500>]
 puts Book.overdue.inspect # []

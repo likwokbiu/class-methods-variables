@@ -19,6 +19,14 @@ class Zombie
     end
   end
 
+  def speed
+    @speed
+  end
+
+  def strength
+    @strength
+  end
+
   def encounter
     if outrun_zombie?
       return "You escaped!"
@@ -71,7 +79,21 @@ class Zombie
   end
 
   def self.increase_plague_level
-    @@plague_level += Random.rand(3)
+    # @@plague_level += Random.rand(3)
+    @@plague_level += @@horde.length # Stretch goals: 1
+  end
+
+  def self.deadliest_zombie
+    highest_power = 0
+    top_ranking = nil
+    @@horde.each do | a_zombie |
+      power = a_zombie.speed + a_zombie.strength
+      if power > highest_power
+        top_ranking = a_zombie
+        highest_power = power
+      end
+    end
+    return top_ranking
   end
 
 end
@@ -80,6 +102,9 @@ end
 puts Zombie.all.inspect # []
 Zombie.new_day
 puts Zombie.all.inspect # [#<Zombie:0x005626ecc5ebd0 @speed=4, @strength=0>, #<Zombie:0x005626ecc5eba8 @speed=0, @strength=4>, #<Zombie:0x005626ecc5eb80 @speed=4, @strength=4>]
+
+puts Zombie.deadliest_zombie # Stretch goals: 2
+
 zombie1 = Zombie.all[0]
 zombie2 = Zombie.all[1]
 zombie3 = Zombie.all[2]
@@ -88,9 +113,14 @@ puts zombie2.encounter # You died
 puts zombie3.encounter # You died
 Zombie.new_day
 puts Zombie.all.inspect # [#<Zombie:0x005626ecc5e1f8 @speed=0, @strength=0>, #<Zombie:0x005626ecc5e180 @speed=3, @strength=3>, #<Zombie:0x005626ecc5e158 @speed=1, @strength=2>, #<Zombie:0x005626ecc5e090 @speed=0, @strength=4>]
+
+puts Zombie.deadliest_zombie # Stretch goals: 2
+
 zombie1 = Zombie.all[0]
 zombie2 = Zombie.all[1]
 zombie3 = Zombie.all[2]
 puts zombie1.encounter # You got away
 puts zombie2.encounter # You are now a zombie
 puts zombie3.encounter # You died
+
+puts Zombie.deadliest_zombie # Stretch goals: 2
